@@ -29,6 +29,7 @@ export class AddTouristComponent implements OnInit {
 
   onSubmit() {
     console.log(this.tourist);
+    alert("Successfully Registered !!")
     this.addTourist();
   }
 

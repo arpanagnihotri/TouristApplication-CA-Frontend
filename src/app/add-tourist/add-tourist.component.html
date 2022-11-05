@@ -1,0 +1,138 @@
+<div class="col-md-8 offset-md-2">
+  <h3 class="text-center header" style="margin-right: 2em; margin-bottom: 4px; color: darkblue;">
+    Register Yourself 🤙
+  </h3>
+  <form #touristvalue="ngForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label>Tourist Id</label>
+      <input
+        type="number"
+        class="form-control"
+        id="id"
+        #id="ngModel"
+        [(ngModel)]="tourist.id"
+        name="id"
+        pattern="[0-9].{0,3}"
+        required
+      />
+      <div *ngIf="id.invalid && id.touched" style="color: red">
+        Invalid Id !
+      </div>
+    </div>
+    <div class="form-group">
+      <label>First Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="firstname"
+        #firstname="ngModel"
+        [(ngModel)]="tourist.firstname"
+        name="firstname"
+        pattern="[a-zA-Z-].{0,14}"
+        required
+      />
+      <div *ngIf="firstname.invalid && firstname.touched" style="color: red">
+        Please enter a valid firstname !
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Last Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="lastname"
+        #lastname="ngModel"
+        [(ngModel)]="tourist.lastname"
+        name="lastname"
+        pattern="[a-zA-Z-].{0,11}"
+        required
+      />
+      <div *ngIf="lastname.invalid && lastname.touched" style="color: red">
+        Please enter a valid lastname !
+      </div>
+    </div>
+    <div class="form-group">
+      <label> Gender :</label>
+      <span class="radio" style="margin-left: 2px">
+        <label
+          ><input
+            type="radio"
+            name="gender"
+            id="male"
+            [(ngModel)]="tourist.gender"
+            value="m"
+            checked
+          />
+          Male</label
+        >
+      </span>
+      <span class="radio" style="margin-left: 2px">
+        <label
+          ><input
+            type="radio"
+            name="gender"
+            id="female"
+            [(ngModel)]="tourist.gender"
+            value="f"
+          />Female</label
+        >
+      </span>
+    </div>
+    <div class="form-group">
+      <label>Age</label>
+      <input
+        type="number"
+        class="form-control"
+        id="age"
+        #age="ngModel"
+        pattern="[0-9].{1}"
+        [(ngModel)]="tourist.age"
+        name="age"
+        required
+      />
+      <div *ngIf="age.invalid && age.touched" style="color: red">
+        Please enter a valid age !
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Place you came from.</label>
+      <input
+        type="text"
+        class="form-control"
+        id="fromplace"
+        #fromplace="ngModel"
+        pattern="[a-zA-Z-].{0,}"
+        [(ngModel)]="tourist.fromplace"
+        name="fromplace"
+        required
+      />
+      <div *ngIf="fromplace.invalid && fromplace.touched" style="color: red">
+        Please enter a valid place !
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Number of Visiting Days</label>
+      <input
+        type="number"
+        class="form-control"
+        id="visitdays"
+        #visitdays="ngModel"
+        pattern="[0-9].{0,2}"
+        [(ngModel)]="tourist.visitdays"
+        name="visitdays"
+        required
+      />
+      <div *ngIf="visitdays.invalid && visitdays.touched" style="color: red">
+        Please enter a valid value !
+      </div>
+    </div>
+    <button
+      class="btn"
+      style="margin-top: 4px; background-color: rgb(255, 64, 129); color: white"
+      [disabled]="touristvalue.invalid"
+      type="submit"
+    >
+      Submit
+    </button>
+  </form>
+</div>

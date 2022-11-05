@@ -1,0 +1,36 @@
+<div class="container">
+    <h3 class="text-center header" style="margin-right:3.5em;color: darkblue;">Tourists family we have🤝</h3>
+    <mat-table [dataSource]="tourists">
+        <ng-container matColumnDef="id">
+            <mat-header-cell *matHeaderCellDef> Tourist Id </mat-header-cell>
+            <mat-cell *matCellDef="let tourist"> {{tourist.id}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="firstname">
+            <mat-header-cell *matHeaderCellDef> First Name </mat-header-cell>
+            <mat-cell *matCellDef="let tourist"> {{tourist.firstname}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="lastname">
+            <mat-header-cell *matHeaderCellDef> Last Name </mat-header-cell>
+            <mat-cell *matCellDef="let tourist"> {{tourist.lastname}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="gender">
+            <mat-header-cell *matHeaderCellDef> Gender </mat-header-cell>
+            <mat-cell *matCellDef="let tourist"> {{tourist.gender}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="age">
+            <mat-header-cell *matHeaderCellDef> Age </mat-header-cell>
+            <mat-cell *matCellDef="let tourist"> {{tourist.age}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="fromplace">
+            <mat-header-cell *matHeaderCellDef> From Place </mat-header-cell>
+            <mat-cell *matCellDef="let tourist"> {{tourist.fromplace}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="visitdays">
+            <mat-header-cell *matHeaderCellDef> Visiting Days </mat-header-cell>
+            <mat-cell *matCellDef="let tourist"> {{tourist.visitdays}} </mat-cell>
+        </ng-container>-->
+        <mat-header-row *matHeaderRowDef="displayedColumns" ></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+
+    </mat-table>
+</div>
